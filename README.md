@@ -2,7 +2,7 @@
 
 > This is a project from the first week of the fourth module of the Microverse Program.
 
-As its name suggests, Vet Clinic Database contains list of SQL commands to create a table in a database and insert a list of animals. Just if like they were patients in a vet clinic.
+As its name suggests, Vet Clinic Database contains a list of SQL commands to create a table in a database and insert animals with their respective information. Just like if the animals were patients in a vet clinic, and the information about them is stored in a table in a database.
 
 
 ## Getting Started
