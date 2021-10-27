@@ -21,3 +21,62 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight)
 VAlUES ('Boarmon', 'Jun 7, 2005', 7, TRUE, 20.4);
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight)
 VAlUES ('Blossom', 'Oct 13, 1998', 3, TRUE, 17);
+
+INSERT INTO owners (full_name, age)
+VAlUES ('Sam Smith', 34),
+  ('Jennifer Orwell', 19),
+  ('Bob', 45),
+  ('Melody Pond', 77),
+  ('Dean Winchester', 14),
+  ('Jodie Whittaker', 38);
+
+INSERT INTO species (name)
+VAlUES ('Pokemon'),
+  ('Digimon');
+
+UPDATE animals
+SET species_id = (
+  SELECT
+    id
+  FROM
+    species
+  WHERE
+    name = 'Digimon' AND animals.name LIKE '%mon'
+);
+
+UPDATE animals
+SET species_id = (
+  SELECT
+    id
+  FROM
+    species
+  WHERE
+    name = 'Pokemon' AND animals.name NOT LIKE '%mon'
+  OR
+    name = 'Digimon' AND animals.name LIKE '%mon'
+);
+
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE name = 'Agumon' AND owners.full_name = 'Sam Smith';
+
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE name IN ('Gabumon', 'Pikachu') AND owners.full_name = 'Jennifer Orwell';
+
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE name = 'Devimon' AND owners.full_name = 'Bob';
+
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE name IN ('Charmander', 'Squirtle', 'Blossom') AND owners.full_name = 'Melody Pond';
+
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE name IN ('Angemon', 'Boarmon') AND owners.full_name = 'Dean Winchester';
