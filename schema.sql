@@ -80,4 +80,12 @@ ADD CONSTRAINT fk_vets
 FOREIGN KEY (vet_id)
 REFERENCES vets(id);
 
+-- Performance Audit
+
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+CREATE INDEX animal_id_desc ON visits (animal_id DESC);
+
+CREATE INDEX vet_id_desc ON visits (vet_id DESC);
+
+CREATE INDEX email_desc ON owners (email DESC);
