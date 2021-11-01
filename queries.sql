@@ -281,3 +281,7 @@ GROUP BY species.name;
   Result--> From a total of 9 visits: Pokemon = 3 & Digimon = 6
   Maisy Smith should specialize in Digimon.
 */
+
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
