@@ -79,3 +79,5 @@ ALTER TABLE visits
 ADD CONSTRAINT fk_vets
 FOREIGN KEY (vet_id)
 REFERENCES vets(id);
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
