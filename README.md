@@ -5,6 +5,9 @@
 As its name suggests, Vet Clinic Database contains a list of SQL commands to create a table in a database and insert animals with their respective information. Just like if the animals were patients in a vet clinic, and the information about them is stored in a table in a database.
 
 
+## Schema Diagram
+![](./db-diagram.png)
+
 ## Getting Started
 
 This repository includes files with plain SQL that can be used to recreate a database:
